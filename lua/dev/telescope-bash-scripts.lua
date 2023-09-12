@@ -5,6 +5,8 @@ local conf = require("telescope.config").values
 local actions = require("telescope.actions")
 local action_state = require("telescope.actions.state")
 
+local Terminal = require("toggleterm.terminal").Terminal
+
 -- our picker function: colors
 local colors = function(opts)
   opts = opts or {}
@@ -13,15 +15,16 @@ local colors = function(opts)
       prompt_title = "colors",
       finder = finders.new_table({
         results = {
-          { "first tester shell script", "./lua/dev/test.sh" },
-          { "second tester shell script", "./lua/dev/test2.sh" },
+          { "test", "./lua/dev/test.sh" },
+          { "test2", "./lua/dev/test2.sh" },
+          { "lazygit", "lazygit" },
         },
         entry_maker = function(entry)
           return {
             value = entry,
             display = entry[1],
             ordinal = entry[1],
-            path = entry[2],
+            cmd = entry[2],
           }
         end,
       }),
@@ -32,7 +35,17 @@ local colors = function(opts)
           local selection = action_state.get_selected_entry()
           -- print(vim.inspect(selection.path))
           -- vim.api.nvim_put({ selection[1] }, "", false, true)
-          vim.cmd('TermExec direction="float" cmd="' .. selection.path .. '" go_back=0')
+          local t = Terminal:new({
+            cmd = selection.cmd,
+            direction = "float",
+            -- close_on_exit = false,
+            on_open = function()
+              -- goto insert mode
+              vim.api.nvim_feedkeys("i", "t", true)
+            end,
+          })
+          t:toggle()
+          -- vim.cmd('TermExec direction="float" cmd="' .. selection.cmd .. '" go_back=0')
         end)
         return true
       end,
