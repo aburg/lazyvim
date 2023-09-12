@@ -10,6 +10,7 @@ return {
       local terminals = {
         top = Terminal:new({ cmd = "top", hidden = true, direction = "float" }),
         bottom = Terminal:new({ cmd = "bottom", hidden = true, direction = "float" }),
+        shell1 = Terminal:new({ cmd = "$SHELL", hidden = true, direction = "float" }),
       }
 
       function my_term_toggle(terminal)
@@ -20,6 +21,7 @@ return {
 
       vim.keymap.set("n", "<f7>", "<cmd>lua my_term_toggle('top')<cr>", { desc = "top" })
       vim.keymap.set("n", "<f8>", "<cmd>lua my_term_toggle('bottom')<cr>", { desc = "bottom" })
+      vim.keymap.set("n", "<f9>", "<cmd>lua my_term_toggle('shell1')<cr>", { desc = "shell1" })
     end,
   },
 }
