@@ -29,3 +29,11 @@ git clone git@github.com:aburg/lazyvim ~/.config/nvim
 * take twig integration from kickstart.nvim IF that is good
 * tailwindcss https://www.lazyvim.org/extras/lang/tailwind
 * make trouble highlight the TODO/HACK etc.
+* telescopes
+  * ansible
+    * mark playbook with # telescope-ansible-config: 
+    * pick between available inventories
+    * ask become pass?
+  * shell tasks
+    * every file with bash shebang?
+    * # telescope-ansible-config
