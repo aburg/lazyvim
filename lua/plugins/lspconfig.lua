@@ -7,6 +7,7 @@ return {
       servers = {
         intelephense = {},
         svelte = {},
+        emmet_language_server = {},
       },
     },
   },
