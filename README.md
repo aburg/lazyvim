@@ -22,3 +22,4 @@ git clone git@github.com:aburg/lazyvim ~/.config/nvim
 * take twig integration from kickstart.nvim IF that is good
 * comment (astrovim had <leader>/ which is taken now)
 * tailwindcss https://www.lazyvim.org/extras/lang/tailwind
+* make trouble highlight the TODO/HACK etc.
