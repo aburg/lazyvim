@@ -21,3 +21,4 @@ git clone git@github.com:aburg/lazyvim ~/.config/nvim
 
 * take twig integration from kickstart.nvim IF that is good
 * make my php snippet work
+* comment (astrovim had <leader>/ which is taken now)
