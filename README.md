@@ -17,6 +17,12 @@ rm -rf ~/.local/state/nvim
 git clone git@github.com:aburg/lazyvim ~/.config/nvim
 ```
 
+## Cheatsheet
+
+* comment
+  * n_gcc
+  * v_gc
+
 ## TODO
 
 * take twig integration from kickstart.nvim IF that is good
