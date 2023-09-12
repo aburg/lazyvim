@@ -36,4 +36,7 @@ git clone git@github.com:aburg/lazyvim ~/.config/nvim
     * ask become pass?
   * shell tasks
     * every file with bash shebang?
+    * only executables
+      * https://github.com/nvim-telescope/telescope.nvim/blob/master/lua/telescope/builtin/__files.lua
+        * if vim.fn.executable()
     * # telescope-ansible-config
