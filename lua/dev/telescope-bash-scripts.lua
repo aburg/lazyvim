@@ -7,6 +7,20 @@ local action_state = require("telescope.actions.state")
 
 local Terminal = require("toggleterm.terminal").Terminal
 
+local _create_terminal = function(selection)
+  local t = Terminal:new({
+    cmd = selection.cmd,
+    direction = "float",
+    -- close_on_exit = false,
+    on_open = function()
+      -- goto insert mode
+      vim.api.nvim_feedkeys("i", "t", true)
+    end,
+  })
+  t:toggle()
+  -- vim.cmd('TermExec direction="float" cmd="' .. selection.cmd .. '" go_back=0')
+end
+
 -- our picker function: colors
 local colors = function(opts)
   opts = opts or {}
@@ -34,18 +48,7 @@ local colors = function(opts)
           actions.close(prompt_bufnr)
           local selection = action_state.get_selected_entry()
           -- print(vim.inspect(selection.path))
-          -- vim.api.nvim_put({ selection[1] }, "", false, true)
-          local t = Terminal:new({
-            cmd = selection.cmd,
-            direction = "float",
-            -- close_on_exit = false,
-            on_open = function()
-              -- goto insert mode
-              vim.api.nvim_feedkeys("i", "t", true)
-            end,
-          })
-          t:toggle()
-          -- vim.cmd('TermExec direction="float" cmd="' .. selection.cmd .. '" go_back=0')
+          _create_terminal(selection)
         end)
         return true
       end,
