@@ -21,12 +21,11 @@ local _create_terminal = function(selection)
   -- vim.cmd('TermExec direction="float" cmd="' .. selection.cmd .. '" go_back=0')
 end
 
--- our picker function: colors
-local colors = function(opts)
+local bash_scripts = function(opts)
   opts = opts or {}
   pickers
     .new(opts, {
-      prompt_title = "colors",
+      prompt_title = "pick a bash script",
       finder = finders.new_table({
         results = {
           { "test", "./lua/dev/test.sh" },
@@ -58,5 +57,4 @@ end
 
 -- to execute the function run:
 -- :luafile %
-colors(require("telescope.themes").get_dropdown({}))
--- colors()
+bash_scripts(require("telescope.themes").get_dropdown({}))
