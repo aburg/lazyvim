@@ -6,6 +6,7 @@ return {
         "ansible-language-server",
         "emmet-language-server",
         "intelephense",
+        "stylua",
         "svelte-language-server",
       },
     },
