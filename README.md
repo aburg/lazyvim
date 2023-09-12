@@ -25,6 +25,7 @@ git clone git@github.com:aburg/lazyvim ~/.config/nvim
 
 ## TODO
 
+* make <leader>cb work like <leader>bd (the latter will move to another buffer properly, while the former will switch to the tree buffer if we just came from there and it was the most recently created buffer)
 * disable spelling by default
 * take twig integration from kickstart.nvim IF that is good
 * tailwindcss https://www.lazyvim.org/extras/lang/tailwind
