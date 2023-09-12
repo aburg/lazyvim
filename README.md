@@ -35,6 +35,8 @@ git clone git@github.com:aburg/lazyvim ~/.config/nvim
     * pick between available inventories
     * ask become pass?
   * shell tasks
+    * picker "find_files" with filter possible?
+    * only *.sh
     * every file with bash shebang?
     * only executables
       * https://github.com/nvim-telescope/telescope.nvim/blob/master/lua/telescope/builtin/__files.lua
