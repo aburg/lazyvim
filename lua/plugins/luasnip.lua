@@ -7,8 +7,7 @@ return {
     dependencies = {
       "rafamadriz/friendly-snippets",
       config = function()
-        --      require("luasnip.loaders.from_vscode").lazy_load()
-        require("luasnip.loaders.from_lua").load({ paths = "./lua/user/snippets" })
+        require("luasnip.loaders.from_vscode").lazy_load()
       end,
     },
     opts = {
@@ -27,5 +26,8 @@ return {
       { "<tab>", function() require("luasnip").jump(1) end, mode = "s" },
       { "<s-tab>", function() require("luasnip").jump(-1) end, mode = { "i", "s" } },
     },
+    config = function()
+      require("luasnip.loaders.from_lua").load({ paths = "./lua/snippets" })
+    end,
   },
 }
