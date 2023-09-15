@@ -5,8 +5,8 @@ return {
       ensure_installed = {
         "ansible-language-server",
         "emmet-language-server",
-        "flake8",
         "intelephense",
+        "rust-analyzer",
         "shellcheck",
         "shfmt",
         "stylua",
