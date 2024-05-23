@@ -1,7 +1,9 @@
-# 💤 LazyVim
+# ATTENTION
 
-ATTENTION: I moved to gitlab because of githubs 2fa policy.
-This is no longer current...
+I moved this project to gitlab because of github's 2fa policy.
+See: <https://gitlab.com/der_abu/lazyvim>
+
+# 💤 LazyVim
 
 Modified from the starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
 Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
